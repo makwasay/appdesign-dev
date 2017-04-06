@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  # Routes for main resources go here
+  get 'home/index'
 
+  # Routes for main resources go here
+  root 'home#index'
 
   # Semi-static page routes go here
 
