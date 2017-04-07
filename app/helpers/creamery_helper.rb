@@ -1,0 +1,2 @@
+module CreameryHelper
+end

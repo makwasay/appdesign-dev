@@ -1,38 +1,31 @@
 require 'rails_helper'
 
-RSpec.describe AssignmentsController, type: :controller do
+RSpec.describe CreameryController, type: :controller do
 
-  describe "GET #create" do
+  describe "GET #home" do
     it "returns http success" do
-      get :create
+      get :home
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET #read" do
+  describe "GET #aboutus" do
     it "returns http success" do
-      get :read
+      get :aboutus
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET #update" do
+  describe "GET #contactus" do
     it "returns http success" do
-      get :update
+      get :contactus
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET #destroy" do
+  describe "GET #privacy" do
     it "returns http success" do
-      get :destroy
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET #index" do
-    it "returns http success" do
-      get :index
+      get :privacy
       expect(response).to have_http_status(:success)
     end
   end

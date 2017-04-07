@@ -1,18 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>GOES HERE...</title>
-    <%= stylesheet_link_tag    "application" %>
-    <%= csrf_meta_tags %>
+        <%= csrf_meta_tags %>
+        <%= stylesheet_link_tag    'application', media: 'all',
+                                                  'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <!--[if lt IE 9]>
+          <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+          </script>
+        <![endif]-->
+        <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+      <ul class="nav navbar-nav navbar-left">
+      <li><%= link_to "Creamery App", 'creamery_home', id: "title" %></li>
+    </ul>    
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home",   creamery_home_path %></li>
+            <li><%= link_to "Stores",   stores_index_path %></li>
+            <li><%= link_to "Employees", employees_index_path %></li>
+            <li><%= link_to "Assignments", assignments_index_path %></li>
+            <li><%= link_to "About Us",  creamery_aboutus_path %></li>
+            <li><%= link_to "Contact Us", creamery_contactus_path %></li>
+            <li><%= link_to "Privacy", creamery_privacy_path %></li>
+            
+          </ul>
+        </nav>
+      </div>
+    </header>
   </head>
-
   <body>
-    <div>
-       <%= yield %>
+    <div class="titles">
+        <h1><%= (yield(:page)) %></h1>
     </div>
-    <%= javascript_include_tag "application" %>
   </body>
+  
+    <div class="container">
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
 </html>
+
+
