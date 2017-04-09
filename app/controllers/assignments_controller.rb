@@ -13,6 +13,10 @@ class AssignmentsController < ApplicationController
   # GET /assignments/1.json
   def show
     @assignment = Assignment.find(params[:id])
+    # @store = @assignment.store_id
+    # @emp = @assignment.employee_id
+    # @emp_name = Employee.find(params[@emp]).proper_name
+    # @store_name = Store.find(params[@store]).name
   end
 
   # GET /assignments/new

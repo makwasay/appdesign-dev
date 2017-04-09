@@ -98,7 +98,11 @@
 }
 
 table {
-  border-collapse:collapse;
+    width: 80%;
+}
+
+th {
+    height: 50px;
 }
 
 table th.centered, table td.centered {

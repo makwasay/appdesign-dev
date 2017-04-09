@@ -133,7 +133,7 @@ Feature: Manage employees
     And I fill in "employee_phone" with "724.364.9511"
     And I select "May" from "employee_date_of_birth_2i"
     And I select "31" from "employee_date_of_birth_3i"
-    And I select "2002" from "employee_date_of_birth_1i"
+    And I select "2012" from "employee_date_of_birth_1i"
     And I select "Employee" from "employee_role"
     And I check "employee_active"
     And I press "Create Employee"

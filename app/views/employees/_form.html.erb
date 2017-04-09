@@ -1,6 +1,10 @@
 <%= simple_form_for(@employee) do |f| %>
   <%= f.error_notification %>
-
+  <div class="notice">
+    <% @employee.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </div>
   <div class="form-inputs">
     <%= f.input :first_name %>
     <%= f.input :last_name %>
@@ -10,9 +14,7 @@
     <%= f.input :phone %>
     
     <%= f.label :role %>
-    <%= f.select(:role, ['Employee','Admin','Manager']) %>
-    
-    <%= f.input :role %>
+    <%= f.select(:role, [['Employee', 'employee'],['Manager', 'manager'],['Administrator', 'admin']]) %>
     <%= f.input :active %>
   </div>
 

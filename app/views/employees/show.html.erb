@@ -1,38 +1,40 @@
 <body>
 <p id="flash"><%= notice %></p>
-<h2>Employee Details<h2>
+<h2>Employee Details</h2>
 <p>
-  <strong>Name:</strong>
+  <b>Name:</b>
   <%= @employee.name %>
 </p>
 
 <p>
-  <strong>Last name:</strong>
-  <%= @employee.last_name %>
-</p>
-
-<p>
-  <strong>SSN:</strong>
+  <b>SSN:</b>
   <%= @employee.ssn %>
 </p>
 
 <p>
-  <strong>Date of Birth:</strong>
+  <b>Date of Birth:</b>
   <%= @employee.date_of_birth.strftime("%m/%d/%y") %>
 </p>
 
 <p>
-  <strong>Phone:</strong>
+  <b>Phone:</b>
   <%= number_to_phone(@employee.phone) %>
 </p>
 
 <p>
-  <strong>Role:</strong>
+  <b>Role:</b>
   <%= @employee.role.capitalize %>
 </p>
 
 <p>
-  <strong>Active:</strong>
+  <strong>Assignment History</strong>
+  <% @assignments.each do |assignment| %>
+    <%= link_to "#{assignment.store.name}", assignment.store %> <br>
+  <% end %>
+</p>
+
+<p>
+  <b>Active:</b>
   <% if @employee.active %>
   Yes
   <% else %>

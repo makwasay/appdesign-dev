@@ -11,6 +11,7 @@ class EmployeesController < ApplicationController
   # GET /employees/1.json
   def show
     @employee = Employee.find(params[:id])
+    @assignments = @employee.assignments
   end
 
   # GET /employees/new

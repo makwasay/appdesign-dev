@@ -1,7 +1,17 @@
-<footer id='footer'>
-  <small>
-    The Phase 3 by Abdul Wasay</a>
-  </small>
-  <p><%= yield(:title) %></p>
-
-</footer>
+    
+    <footer id='footer'>
+      <nav>
+      <ul class="nav navbar-nav navbar-left">
+        <small>Webmaster Phase 3 Abdul Wasay : <%= yield(:title) %></small>
+      </nav>
+    </footer>
+    <footer class="navbar navbar-fixed-bottom navbar-inverse">
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home",   creamery_home_path %></li>
+        <li><%= link_to "About Us",  about_path %></li>
+        <li><%= link_to "Contact Us", contact_path %></li>
+        <li><%= link_to "Privacy", privacy_path %></li>
+      </ul>
+    </nav>
+  </footer>

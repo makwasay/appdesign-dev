@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html>
   <body>
-  <head>
-        <%= csrf_meta_tags %>
-        <%= stylesheet_link_tag    'application', media: 'all',
+    <head>
+      <%= csrf_meta_tags %>
+      <%= stylesheet_link_tag    'application', media: 'all',
                                                   'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-        <!--[if lt IE 9]>
-          <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-          </script>
-        <![endif]-->
-        <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-      <ul class="nav navbar-nav navbar-left">
-      <li><%= link_to "Creamery App", creamery_home_path %></li>
-    </ul>    
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home",   creamery_home_path %></li>
-            <li><%= link_to "Stores",   stores_path %></li>
-            <li><%= link_to "Employees", employees_path %></li>
-            <li><%= link_to "Assignments", assignments_path %></li>
-            <li><%= link_to "About Us",  about_path %></li>
-            <li><%= link_to "Contact Us", contact_path %></li>
-            <li><%= link_to "Privacy", privacy_path %></li>
-            
-          </ul>
-        </nav>
-      </div>
-    </header>
-  </head>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+        </script>
+      <![endif]-->
+      <header class="navbar navbar-fixed-top navbar-inverse">
+        <div class="container">
+          <ul class="nav navbar-nav navbar-left">
+            <li><%= link_to "Creamery App", creamery_home_path %></li>
+          </ul>    
+          <nav>
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to "Home",   creamery_home_path %></li>
+              <li><%= link_to "Stores",   stores_path %></li>
+              <li><%= link_to "Employees", employees_path %></li>
+              <li><%= link_to "Assignments", assignments_path %></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </head>
   
     <div class="titles">
         <h1><%= (yield(:page)) %></h1>

@@ -11,7 +11,13 @@ class StoresController < ApplicationController
   # GET /stores/1.json
   def show
     @store = Store.find(params[:id])
+    @current_assignments = @store.assignments.current
+    @current_employees = Array.new
+    @current_assignments.each do |assignment|
+      @current_employees << assignment.employee
+    end
   end
+
 
   # GET /stores/new
   def new
