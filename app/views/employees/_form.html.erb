@@ -5,11 +5,12 @@
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <%= f.input :ssn %>
-    <%= f.input :date_of_birth %>
+    <%= f.label :date_of_birth %><br>
+    <%= f.date_select :date_of_birth, :end_year => 1960 %>
     <%= f.input :phone %>
     
     <%= f.label :role %>
-    <%= f.select(:role, ['employee','admin','manager']) %>
+    <%= f.select(:role, ['Employee','Admin','Manager']) %>
     
     <%= f.input :role %>
     <%= f.input :active %>

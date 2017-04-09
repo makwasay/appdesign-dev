@@ -27,7 +27,7 @@ class EmployeesController < ApplicationController
   def create
     @employee = Employee.new(employee_params)
     if @employee.save
-      redirect_to employee_path(@employee), notice: "Employee created"
+      redirect_to employee_path(@employee), notice: "Successfully created #{@employee.proper_name}"
     else
       render action: 'new'
     end
@@ -47,7 +47,7 @@ class EmployeesController < ApplicationController
   # DELETE /employees/1.json
   def destroy
     @employee.destroy
-    redirect_to employee_path, notice: 'employee destroyed'
+    redirect_to employee_path, notice: 'Employee destroyed'
   end
 
   private

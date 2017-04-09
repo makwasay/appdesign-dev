@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<body>
+
+<p id="flash"><%= notice %></p>
 <h2> Store Details </h2>
 <p>
   <strong>Name:</strong>
@@ -33,8 +35,13 @@
 
 <p>
   <strong>Active:</strong>
-  <%= @store.active %>
+  <% if @store.active %>
+  Yes
+  <% else %>
+  No
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_store_path(@store) %> |
 <%= link_to 'Back', stores_path %>
+</body>
