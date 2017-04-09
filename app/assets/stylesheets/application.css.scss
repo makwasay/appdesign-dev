@@ -70,6 +70,10 @@
   background-color: #ffffff;
 }
 
+body {
+    background-color: lightgray;
+}
+
 #main_content {
   margin-top: 150px;
 }
@@ -78,13 +82,13 @@
   margin-top: 15px;
   padding-top: 0px;
   padding-bottom: 15px;
-  background-color:#ffffff;
+  background-color:lightgray;
   color: #229944;
   text-align: center;
 }
 
 #footer a {
-  color: #339999;
+  color: #4CAF50;
   text-decoration: none;
 }
 
@@ -101,8 +105,15 @@ table {
     width: 80%;
 }
 
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+}
+
 th {
-    height: 50px;
+    background-color: #4CAF50;
+    color: white;
 }
 
 table th.centered, table td.centered {
@@ -124,4 +135,20 @@ li.well {
 
 label {
   padding-right: 4px;
+}
+
+li {
+    border-left: 1px solid #bbb;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #444;
 }

@@ -17,7 +17,7 @@
   </thead>
 
   <tbody>
-    <% @current_assignments.each do |assignment| %>
+    <% @cur_assign.each do |assignment| %>
       <tr>
         <td><%= link_to "#{assignment.store.name}", assignment.store %></td>
         <td><%= link_to "#{assignment.employee.name}", assignment.employee %></td>
@@ -50,7 +50,7 @@
   </thead>
 
   <tbody>
-    <% @past_assignments.each do |assignment| %>
+    <% @past_assign.each do |assignment| %>
       <tr>
         <td><%= link_to "#{assignment.store.name}", assignment.store %></td>
 

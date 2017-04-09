@@ -5,8 +5,8 @@ class AssignmentsController < ApplicationController
   # GET /assignments.json
   def index
     @assignments = Assignment.all
-    @current_assignments = Assignment.current
-    @past_assignments = Assignment.past
+    @cur_assign = Assignment.current
+    @past_assign = Assignment.past
   end
 
   # GET /assignments/1
