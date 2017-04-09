@@ -27,7 +27,9 @@ class Store < ActiveRecord::Base
   # Misc Constants
   STATES_LIST = [['Ohio', 'OH'],['Pennsylvania', 'PA'],['West Virginia', 'WV']]
   
-  
+  def staff_count
+    self.assignments.current.length
+  end
   # Callback code
   # -----------------------------
   private

@@ -1,41 +1,43 @@
 class EmployeesController < ApplicationController
-  before_action :set_employee, only: [:show, :edit, :update, :destroy]
+  before_action :set_employee, only: [ :edit, :update, :destroy]
 
   # GET /employees
   # GET /employees.json
   def index
     @employees = Employee.all
-    @active_employees = Employee.active.alphabetical
-    @inactive_employees = Employee.inactive.alphabetical
   end
 
   # GET /employees/1
   # GET /employees/1.json
   def show
-    @assignments = @employee.assignments
+    @employee = Employee.find(params[:id])
   end
 
   # GET /employees/new
   def new
     @employee = Employee.new
-  end 
+  end
 
   # GET /employees/1/edit
   def edit
   end
 
+  # POST /employees
+  # POST /employees.json
   def create
     @employee = Employee.new(employee_params)
     if @employee.save
-      redirect_to employees_index_path(@employee), notice: "Successfully created #{@employee.proper_name}."
+      redirect_to employee_path(@employee), notice: "Employee created"
     else
       render action: 'new'
     end
   end
-
+  
+  # PATCH/PUT /employees/1
+  # PATCH/PUT /employees/1.json
   def update
     if @employee.update(employee_params)
-      redirect_to employee_path(@employee), notice: "Successfully updated #{@employee.proper_name}."
+      redirect_to employee_path(@employee), notice: "Employee Updated."
     else
       render action: 'edit'
     end
@@ -45,7 +47,7 @@ class EmployeesController < ApplicationController
   # DELETE /employees/1.json
   def destroy
     @employee.destroy
-    redirect_to employees_url, notice: "Successfully removed #{@employee.proper_name} from the AMC system."
+    redirect_to employee_path, notice: 'employee destroyed'
   end
 
   private
@@ -54,4 +56,8 @@ class EmployeesController < ApplicationController
       @employee = Employee.find(params[:id])
     end
 
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def employee_params
+      params.require(:employee).permit(:first_name, :last_name, :ssn, :date_of_birth, :phone, :role, :active)
+    end
 end

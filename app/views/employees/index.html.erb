@@ -1,18 +1,16 @@
-<% provide(:page, "Employees") %>
-
-
 <p id="notice"><%= notice %></p>
+
+<h1>Employees</h1>
 
 <table>
   <thead>
     <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Ssn</th>
+      <th>Name</th>
       <th>Date of birth</th>
       <th>Phone</th>
       <th>Role</th>
       <th>Active</th>
+      <th>Currently Assigned</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,13 +18,14 @@
   <tbody>
     <% @employees.each do |employee| %>
       <tr>
-        <td><%= employee.first_name %></td>
-        <td><%= employee.last_name %></td>
-        <td><%= employee.ssn %></td>
+        <td><%= employee.name %></td>
         <td><%= employee.date_of_birth %></td>
-        <td><%= employee.phone %></td>
-        <td><%= employee.role %></td>
+        <td><%= number_to_phone(employee.phone) %></td>
+        <td><%= employee.role.capitalize %></td>
         <td><%= employee.active %></td>
+        <td><%if employee.current_assignment != nil%>
+          <%= link_to "#{employee.current_assignment.store.name}", employee.current_assignment.store %>
+        <%end%> </td>
         <td><%= link_to 'Show', employee %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
         <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -37,6 +36,4 @@
 
 <br>
 
-
-
-<%= link_to "Create New Pliss", employees_new_path %>
+<%= link_to 'New Employee', new_employee_path %>

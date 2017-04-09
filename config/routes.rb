@@ -1,43 +1,35 @@
 Rails.application.routes.draw do
+
+  resources :assignments
+  resources :stores
+  resources :employees
+ 
+
+  get 'stores/index' 
+  get 'stores/edit'
+  get 'stores/new'
+  get 'stores/show'
+
+
   get 'employees/index'
-
-  get 'stores/index'
-
-  get 'assignments/index'
-
-  get 'assignments/create'
-
-  get 'assignments/read'
-
-  get 'assignments/update'
-
-  get 'assignments/destroy'
-
+  get 'employees/edit'
   get 'employees/new'
+  get 'employees/show'
 
-  get 'employees/read'
 
-  get 'employees/update'
+  get 'assignments/index' 
+  get 'assignments/edit'
+  get 'assignments/new'
+  get 'assignments/show'
+  
+  get 'creamery/privacy' , as: 'privacy'
 
-  get 'employees/destroy'
+  get 'creamery/home' 
 
-  get 'stores/create'
+  get 'creamery/aboutus' , as: 'about'
 
-  get 'stores/read'
+  get 'creamery/contactus', as: 'contact'
 
-  get 'stores/update'
-
-  get 'stores/destroy'
-
-  get 'creamery/privacy'
-
-  get 'creamery/home'
-
-  get 'creamery/aboutus'
-
-  get 'creamery/contactus'
-
-  get 'creamery/privacy'
   
   # Routes for main resources go here
   root 'creamery#home'

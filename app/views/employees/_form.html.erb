@@ -1,52 +1,17 @@
-<%= form_for(@employee) do |f| %>
-  <% if employee.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+<%= simple_form_for(@employee) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% employee.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+  <div class="form-inputs">
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :ssn %>
+    <%= f.input :date_of_birth %>
+    <%= f.input :phone %>
+    <%= f.input :role %>
+    <%= f.input :active %>
   </div>
 
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :ssn %>
-    <%= f.text_field :ssn %>
-  </div>
-
-  <div class="field">
-    <%= f.label :date_of_birth %>
-    <%= f.date_select :date_of_birth %>
-  </div>
-
-  <div class="field">
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= f.label :role %>
-    <%= f.text_field :role %>
-  </div>
-
-  <div class="field">
-    <%= f.label :active %>
-    <%= f.check_box :active %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>

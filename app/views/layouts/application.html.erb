@@ -12,17 +12,17 @@
         <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
       <ul class="nav navbar-nav navbar-left">
-      <li><%= link_to "Creamery App", 'creamery_home', id: "title" %></li>
+      <li><%= link_to "Creamery App", creamery_home_path %></li>
     </ul>    
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home",   creamery_home_path %></li>
-            <li><%= link_to "Stores",   stores_index_path %></li>
-            <li><%= link_to "Employees", employees_index_path %></li>
-            <li><%= link_to "Assignments", assignments_index_path %></li>
-            <li><%= link_to "About Us",  creamery_aboutus_path %></li>
-            <li><%= link_to "Contact Us", creamery_contactus_path %></li>
-            <li><%= link_to "Privacy", creamery_privacy_path %></li>
+            <li><%= link_to "Stores",   stores_path %></li>
+            <li><%= link_to "Employees", employees_path %></li>
+            <li><%= link_to "Assignments", assignments_path %></li>
+            <li><%= link_to "About Us",  about_path %></li>
+            <li><%= link_to "Contact Us", contact_path %></li>
+            <li><%= link_to "Privacy", privacy_path %></li>
             
           </ul>
         </nav>
