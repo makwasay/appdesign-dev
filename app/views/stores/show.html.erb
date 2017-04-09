@@ -1,28 +1,19 @@
 <p id="notice"><%= notice %></p>
-
+<h2> Store Details </h2>
 <p>
   <strong>Name:</strong>
   <%= @store.name %>
 </p>
 
 <p>
-  <strong>Street:</strong>
+  <strong>Address:</strong>
   <%= @store.street %>
+  <%= @store.city %>, <%= @store.state %> <%= @store.zip %>
 </p>
 
 <p>
-  <strong>City:</strong>
-  <%= @store.city %>
-</p>
+  <strong>Current Employees:</strong>
 
-<p>
-  <strong>State:</strong>
-  <%= @store.state %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @store.zip %>
 </p>
 
 <p>

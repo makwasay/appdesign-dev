@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <body>
   <head>
         <%= csrf_meta_tags %>
         <%= stylesheet_link_tag    'application', media: 'all',
@@ -29,7 +30,7 @@
       </div>
     </header>
   </head>
-  <body>
+  
     <div class="titles">
         <h1><%= (yield(:page)) %></h1>
     </div>

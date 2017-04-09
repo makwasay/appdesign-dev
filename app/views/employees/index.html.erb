@@ -18,7 +18,7 @@
   <tbody>
     <% @employees.each do |employee| %>
       <tr>
-        <td><%= employee.name %></td>
+        <td><%= link_to "#{employee.name}", employee %></td>
         <td><%= employee.date_of_birth %></td>
         <td><%= number_to_phone(employee.phone) %></td>
         <td><%= employee.role.capitalize %></td>

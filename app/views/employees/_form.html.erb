@@ -7,6 +7,10 @@
     <%= f.input :ssn %>
     <%= f.input :date_of_birth %>
     <%= f.input :phone %>
+    
+    <%= f.label :role %>
+    <%= f.select(:role, ['employee','admin','manager']) %>
+    
     <%= f.input :role %>
     <%= f.input :active %>
   </div>

@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
-
+<h2>Employee Details<h2>
 <p>
-  <strong>First name:</strong>
-  <%= @employee.first_name %>
+  <strong>Name:</strong>
+  <%= @employee.name %>
 </p>
 
 <p>
@@ -17,17 +17,17 @@
 
 <p>
   <strong>Date of birth:</strong>
-  <%= @employee.date_of_birth %>
+  <%= @employee.date_of_birth.strftime("%m/%d/%y") %>
 </p>
 
 <p>
   <strong>Phone:</strong>
-  <%= @employee.phone %>
+  <%= number_to_phone(@employee.phone) %>
 </p>
 
 <p>
   <strong>Role:</strong>
-  <%= @employee.role %>
+  <%= @employee.role.capitalize %>
 </p>
 
 <p>

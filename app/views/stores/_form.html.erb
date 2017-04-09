@@ -5,7 +5,10 @@
     <%= f.input :name %>
     <%= f.input :street %>
     <%= f.input :city %>
-    <%= f.input :state %>
+    
+    <%= f.label :state %>
+    <%= f.select(:state, ['PA','WV','OH']) %>
+    
     <%= f.input :zip %>
     <%= f.input :phone %>
     <%= f.input :latitude %>
